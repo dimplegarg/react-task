@@ -1,0 +1,347 @@
+.navbar1 {
+    position: fixed;
+    min-height: 55px;
+    /* margin-bottom: 20px; */
+    border: 1px solid transparent;
+    border-bottom: 1px solid #afafaf;
+    width: 100%;
+    z-index: 999999;
+    background-color: #ffffff;
+}
+
+.iconColor{
+    color: #afafaf;
+}
+
+.contain_profile {
+    /* color: #fff; */
+    max-width: 161px;
+    text-align: center;
+    min-width: 150px;
+    /* border-radius: 4px; */
+    transition: all ease 0.2s;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.contain_profile > span {
+    /* white-space: pre; */
+    max-width: 100px;
+    /* text-overflow: ellipsis; */
+    /* overflow: hidden; */
+}
+
+.profile_circle {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.userNameNav {
+    display: inline-block;
+    white-space: nowrap;
+    max-width: 77px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+}
+
+.down_icon {
+    display: inline-block;
+    /* background-image: url('../images/dropDown.svg'); */
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: center;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+.contain_profile.open .down_icon {
+    transform: rotate(180deg);
+    transition: transform ease 0.2s;
+}
+
+
+#loginOptions {
+    z-index: -1;
+    /* background-color: rgb(5, 21, 87); */
+    padding: 0;
+    margin: 0;
+    margin-top: -57px;
+    /* margin-left: -18px; */
+    /* margin-right: 48px; */
+    padding-top: 70px;
+    /* left: -4px; */
+    overflow: hidden;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    padding-bottom: 12px;
+    width: 155px;
+    max-width: 155px;
+}
+
+.notificationCount{
+    height: 15px;
+    width: 15px;
+    background-color: #e80909;
+    position: absolute;
+    color: #ffff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: initial;
+    left: 25px;
+    top: 10px;
+    font-size: 10px;
+    padding: 2px;
+}
+
+.sidebar {
+    /* background: #002147; */
+    box-shadow: 1px 0 20px rgba(0, 0, 0, 0.08);
+    z-index: 10;
+    position: fixed;
+    width: 223px;
+    /* 74px; */
+    /* 223px; */
+    margin-top: 60px;
+    height: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    top: 0;
+    z-index: 999;
+    position: fixed;
+  }
+
+  .sidebar ul{
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  .sidebar ul li{
+    padding: 14px 0 14px 38px;
+    color: #7b7b7b;
+  }
+
+  .sidebar ul li:hover{
+    background-color:#eee;
+  }
+
+  .sidebar i, .sidebar img {
+    width: 20px;
+    font-size: 20px;
+    margin-left: -34px;
+    position: absolute;
+  }
+  
+  .sidebar label{
+
+  }
+
+  .active{
+      color:#000 !important;
+  }
+
+  .logo{
+    width: 223px;
+    float: left;
+    height: 60px;
+    background-color: #404040;
+    margin-top: -1px;
+    margin-left: -16px;
+    color: #d6d6d6;
+  }
+
+  .main-content {
+    padding-left: 250px;
+    display: inline-block;
+    height: 100%;
+    min-height: 230px;
+    width: 100%;
+    padding-right: 25px;
+    padding-top: 25px;
+    margin-top: 60px;
+  }
+
+  .heading{
+    margin: 0;
+    font-size: 25px;
+    font-weight: 600;
+    color: #7b7b7b;
+    padding-bottom: 15px;
+  }
+  .taskContainer{
+    width: 100%;
+    height: 122px;
+    margin-bottom: 15px;
+  }
+  .taskDiv{
+    /* width: 140px; */
+    border: 1px solid #d8d8d8;
+    /* float: left; */
+    /* height: 100%; */
+    margin-right: 15px;
+    padding: 10px;
+    position: relative;
+  }
+
+  .summaryDiv{
+    width: 450px;
+    border: 1px solid #d8d8d8;
+    float: left;
+    height: 100%;
+    /* padding: 10px;    */
+  }
+
+  .taskDiv img ,  .taskDiv i{
+    width: 50px;
+    font-size: 50px;
+    color:#c7c6c6;
+    position: absolute;
+    right: 10px;
+    top: 37px;
+  }
+
+  .space{
+      margin-top: 17px !important;
+  }
+
+  .smallLbl{
+    font-size: 11px;
+    font-weight: 100;
+    display: block;
+    margin: 0;
+    color: #7b7b7b;
+  }
+
+  .count{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 0;
+    display: block;
+  }
+
+  .itemName{
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .summaryDiv label{
+    padding: 10px;
+    margin: 0;
+  }
+
+  .summaryContent{
+    border-top: 1px solid #c7c6c6;
+  }
+
+  .summaryContent label{
+    margin-right: 72px;
+    width: 210px;
+    color: #908d8d;
+    font-weight: 500;
+}
+
+.summaryContent span{
+    /* padding-right: 110px; */
+}
+
+hr {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+
+/* ----------------------side nav---------------------- */
+
+.sideNav{
+  background-color: #1f1f1f;
+  padding: 15px !important;
+}
+
+.userDetails{
+  display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+   
+}
+
+.userDetails span{
+ margin: 0;
+ /* font-family: Poppins; */
+ font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.71;
+  letter-spacing: normal;
+  color: rgba(235, 235, 235, 0.5);
+}
+.userDetails .signOut{
+color: #69cdff;
+font-size: 10px;
+}
+.sideNavLink{
+  color: rgba(235, 235, 235, 0.5);
+  font-size: 12px;
+  border-left: 1px solid;
+  padding: 10px 12px;
+  /* background: red; */
+
+}
+
+.menuList a:first-child{
+  padding-top: 0 !important;
+}
+
+/* .menuList a:first-of-type { color: red; } */
+
+.menuList{
+  display: flex;
+    flex-direction: column;
+    font-size: 10px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: 1px;
+  color: rgba(238, 238, 238, 0.5);
+}
+
+.menuList span{
+  margin-bottom: 20px;
+}
+
+/* .menuList a{
+  
+} */
+
+.menuList a:hover, .menuList a:active, .menuList a:visited{
+  color: rgba(238, 238, 238, 0.5);
+  text-decoration: none;
+}
+
+.header{
+  background-color: #1f1f1f;
+  padding: 15px !important;
+  font-size: 24px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.33;
+  letter-spacing: normal;
+  color: #f2f2f2;
+  display: flex;
+    flex-direction: column;
+}
+
+.header span:first-child{
+  color: #69cdff;
+  font-size: 10px;
+  }
+
+  .searchBar{
+    
+  }
