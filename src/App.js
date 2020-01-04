@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-
+import Dashboard from "./component/Dashboard";
 import './assets/css/element.css';
 import './assets/css/dashboard.css';
 import './App.css'
-
-// import Login from "./component/Login";
-import Dashboard from "./component/Dashboard";
-
 
 class App extends Component {
   render() {
@@ -15,7 +11,6 @@ class App extends Component {
       <Router>
         <Switch>
           <Route path="/" exact component={Dashboard} />
-          <Route path="/dashboard" component={Dashboard} />
         </Switch>
       </Router>
     );

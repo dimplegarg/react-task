@@ -1,5 +1,7 @@
 import React, {useState} from "react";
 import Cancel from '../assets/images/combined-shape.png';
+import IconButton from '@material-ui/core/IconButton'
+import Button from '@material-ui/core/Button';
 
 export default function AssignDoctors({data, handleSelDoctor,handleAssignDoctor}) {
     const [formData, setFormData] = useState({...data})
@@ -16,10 +18,12 @@ export default function AssignDoctors({data, handleSelDoctor,handleAssignDoctor}
     return(
         <div style={{ border:"1px solid #1f1f1f" }}>
             <div className="list-doctor">
-                <img src={data.img} alt="doctor" />
+                <img src={data.img} alt="doctor" className="doc-img" />
                 <span className="doctor-name">{data.name}</span>
                 <span className="doctor-type">{data.type}</span>
-                <img src={Cancel} alt="Cancel" className="icon" onClick={() => handleSelDoctor(formData)} />
+                <IconButton aria-label="cancel" className="icon" style={{ position:"absolute", marginTop:-15 }}  onClick={() => handleSelDoctor(formData)}>
+                    <img src={Cancel} alt="Cancel" />
+                </IconButton>
             </div>
             <form onSubmit={handleAssign}>
                 <input type="text" placeholder="Roles" name="role" required onChange={handleInputChange} />
@@ -29,7 +33,8 @@ export default function AssignDoctors({data, handleSelDoctor,handleAssignDoctor}
                 </div>
                 <input type="text" placeholder="Linked bank account" name="bankAccount" required onChange={handleInputChange} />
                 <input type="text" placeholder="Linked users" name="linkedUser" required onChange={handleInputChange} />
-                <button className="btn" type="submit">Assign</button>
+                <Button variant="contained" color="primary" type="submit">Assign</Button> 
+                {/* <button className="btn" type="submit">Assign</button> */}
             </form>      
         </div>
     )

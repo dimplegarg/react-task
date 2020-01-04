@@ -19,7 +19,7 @@ export default function SideNav(props) {
               <Tree
                 showLine={true}
                 switcherIcon={<Icon type="right" />}
-                defaultExpandedKeys={['0-0-0']}
+                defaultExpandedKeys={['0-4-0']}
                 onSelect={onSelect}
               >
                 <TreeNode title="Practice" key="0-0" />

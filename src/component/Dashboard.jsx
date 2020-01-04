@@ -6,6 +6,9 @@ import ListDoctors from './ListDoctors';
 import DummyDoctor from '../assets/images/group-5.png';
 import Search from '../assets/images/magnifying-glass.svg';
 import AssignDoctor from './AssignDoctor';
+import ListAssignedDoctors from './ListAssignedDoctors'
+import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton'
 
 const listDoctors = [
     {
@@ -108,6 +111,7 @@ const listDoctors = [
 
 export default function Dashboard(props) {
     const [doctors, setDoctors] = useState(listDoctors);
+    const [assignedDoctors, setAssignDoctors] = useState([]);
     const [selectedDoctor, setSelectedDoctor] = useState();
 
     const handleSelDoc = idx => {
@@ -127,9 +131,12 @@ export default function Dashboard(props) {
 
     const handleAssignDoctor = data => {
         let listDoc = [...doctors];
+        let listAssignDoc = [...assignedDoctors];
         let index = listDoc.findIndex(i => { if(i.id === data.id) return i });
         listDoc.splice(index, 1, data);
+        listAssignDoc.push(data);
         setDoctors(listDoc);
+        setAssignDoctors(listAssignDoc);
         setSelectedDoctor('')
     }
 
@@ -156,14 +163,27 @@ export default function Dashboard(props) {
                                 <span>I Test Street Sydney NSW 2000 - inpatient</span>
                             </div>
                             <div className="col-2 search-icon">
-                                <img src={Edit} alt="edit" style={{}} />
-                                <span style={{ height:10, width:30 }}></span>
-                                <img src={Cancel} alt="cancel" />
+                                <IconButton aria-label="edit">
+                                    <img src={Edit} alt="edit" />
+                                </IconButton>
+                                <IconButton aria-label="cancel">
+                                    <img src={Cancel} alt="cancel" />
+                                </IconButton>
                             </div>
                             </div>
                         </div>
                         <div className="col-2 search-icon">
-                            <button className="btn">Proceed to next location</button>
+                        {assignedDoctors.length > 0 ?
+                            <Button variant="contained" color="primary">Proceed to next location</Button> 
+                            : 
+                            <Button variant="outlined" 
+                                style={{
+                                    border: "1px solid #fff",
+                                    opacity: .5,
+                                    color: "#ebebeb"
+                                }}
+                            >Proceed to next location</Button>
+                        }
                         </div>
                     </div>
                     <div className="line-break"></div>
@@ -186,6 +206,39 @@ export default function Dashboard(props) {
                         </div>
 
                         <div className="col-9">
+                            <table className="table">
+                                <thead>
+                                    <tr>
+                                        <td colSpan="1">ASSIGNED PROVIDERS</td>
+                                        <td colSpan="1">BANK ACCOUNT</td>
+                                        <td colSpan="1">USERS</td>
+                                        <td colSpan="1">ACTIONS</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                {assignedDoctors.length > 0 ?
+                                    <ListAssignedDoctors data={assignedDoctors} />
+                                    :
+                                    <tr className="no-provider">
+                                        <td colSpan="4">
+                                            <p>No providers assigned to this location.</p>
+                                            <p>Search or click on the "+" sign next to the providers to start adding to this location</p>
+                                            <p>Every location needs to have atleast 1 provider</p>
+                                        </td>
+                                    </tr>
+                                }
+                                </tbody>
+                            </table>
+                            {/* <div className="">
+                                <label className="lbl">ASSIGNED PROVIDERS</label>
+                                <label className="lbl">BANK ACCOUNT</label>
+                                <label className="lbl">USERS</label>
+                                <label className="lbl">ACTIONS</label>
+                            </div>
+
+                            <div className="">
+                               
+                            </div> */}
                         </div>
                     </div>
                 </div>
